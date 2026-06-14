@@ -234,28 +234,31 @@
 
     /* Date navigator */
     .date-nav {
-      display: flex; align-items: center; gap: 8px;
-      padding: 8px 14px; background: var(--surface); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 6px;
+      padding: 5px 10px; background: var(--surface); border-bottom: 1px solid var(--border);
       flex-shrink: 0;
     }
     .day-btn {
       background: var(--card); border: 1px solid var(--border); color: var(--text);
-      width: 34px; height: 34px; border-radius: var(--rs); cursor: pointer;
-      font-size: 16px; display: flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 6px; cursor: pointer;
+      font-size: 12px; display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; transition: all 0.12s;
     }
     .day-btn:active { background: var(--accent); border-color: var(--accent); }
     .date-lbl {
-      flex: 1; text-align: center; font-size: 13px; font-weight: 700;
-      color: var(--text); letter-spacing: 0.03em;
+      flex: 1; text-align: center; font-size: 12px; font-weight: 700;
+      color: var(--text); letter-spacing: 0.02em;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .date-lbl.today { color: var(--accent); }
     #date-pick {
-      background: var(--card); border: 1px solid var(--border); color: var(--text);
-      border-radius: var(--rs); padding: 6px 10px; font-size: 12px; cursor: pointer;
-      flex-shrink: 0; outline: none;
+      background: var(--card); border: 1px solid var(--border); color: transparent;
+      border-radius: 6px; padding: 3px 4px; font-size: 11px; cursor: pointer;
+      flex-shrink: 0; outline: none; width: 28px; height: 26px;
     }
-    #date-pick::-webkit-calendar-picker-indicator { filter: invert(0.6); }
+    #date-pick::-webkit-calendar-picker-indicator {
+      filter: invert(0.6); margin: 0; padding: 0; width: 16px; height: 16px; cursor: pointer;
+    }
 
     /* Stats */
     .stats-bar {
@@ -575,7 +578,7 @@
    ⚙  CONFIG
    ══════════════════════════════════════════════ */
 const CONFIG = {
-  version      : 'v1.1.0',
+  version      : 'v1.1.1',
   hospitalName : 'Your Hospital',   // ← Change this
   moPin        : '1234',             // ← Change this
   sessionHours : 12,                 // MO session duration in hours
